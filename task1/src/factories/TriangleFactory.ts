@@ -21,10 +21,18 @@ export class TriangleFactory extends ShapeFactory {
       return this.createOrThrow(line);
     } catch (error) {
       if (error instanceof InvalidShapeDataException) {
-        logger.warn({ err: error.message, line }, 'Skipped invalid triangle line');
+        logger.warn({
+          reason: error.message,
+          rawLine: line,
+          pointsInSpace: 'unavailable (line rejected before entity creation)',
+        }, 'Skipped invalid triangle line');
         return null;
       }
-      logger.error({ err: error, line }, 'Unexpected error while creating a triangle');
+      logger.error({
+        err: error,
+        rawLine: line,
+        pointsInSpace: 'unavailable (line rejected before entity creation)',
+      }, 'Unexpected error while creating a triangle');
       return null;
     }
   }

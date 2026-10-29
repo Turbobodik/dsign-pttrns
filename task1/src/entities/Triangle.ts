@@ -1,6 +1,7 @@
 import { Point } from './Point';
 import { Shape } from './Shape';
 
+/** Three vertices in the XY plane (z = 0). No geometry formulas here. */
 export class Triangle extends Shape {
   constructor(
     id: string,

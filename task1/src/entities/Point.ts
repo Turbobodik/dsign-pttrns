@@ -1,3 +1,4 @@
+/** Immutable 3D point; planar figures use z = 0. */
 export class Point {
   constructor(
     private readonly id: string,
@@ -20,5 +21,10 @@ export class Point {
 
   getZ(): number {
     return this.z;
+  }
+
+  /** Human-readable position, e.g. `A(1, 2, 0)`. */
+  describe(): string {
+    return `${this.id}(${this.x}, ${this.y}, ${this.z})`;
   }
 }
