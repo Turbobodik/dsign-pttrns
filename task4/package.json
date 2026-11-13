@@ -1,0 +1,16 @@
+{
+  "name": "library-task4",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Library system with Prototype, Facade and Visitor",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1"
+  }
+}

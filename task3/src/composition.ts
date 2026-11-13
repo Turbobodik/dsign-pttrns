@@ -7,10 +7,8 @@ import { RoomInventory } from './services/RoomInventory';
 
 export interface HotelSystem {
   facade: HotelBookingFacade;
-  inventory: RoomInventory;
   payments: PaymentService;
   notifications: NotificationService;
-  repository: BookingRepository;
 }
 
 export function createHotelSystem(): HotelSystem {
@@ -24,7 +22,5 @@ export function createHotelSystem(): HotelSystem {
   const repository = new BookingRepository();
   const facade = new HotelBookingFacade(inventory, payments, notifications, repository);
 
-  return {
-    facade, inventory, payments, notifications, repository,
-  };
+  return { facade, payments, notifications };
 }

@@ -1,0 +1,264 @@
+:root {
+  color-scheme: light;
+  --bg: #f3efe6;
+  --ink: #1c1a16;
+  --muted: #6a6458;
+  --line: #d8d0c2;
+  --panel: #fffdf8;
+  --accent: #2f5d50;
+  --accent-soft: #d9ebe4;
+  --warn: #8a3b12;
+  --danger: #8f2d2d;
+  --radius: 10px;
+  --font: "Segoe UI", "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "Cascadia Mono", "Consolas", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, #efe6d4 0%, transparent 45%),
+    linear-gradient(180deg, #f7f3ea 0%, var(--bg) 100%);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+header {
+  margin-bottom: 1.25rem;
+}
+
+header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.patterns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.patterns span {
+  font-size: 0.78rem;
+  border: 1px solid var(--line);
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  flex: 1 1 140px;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+button {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+button.danger {
+  border-color: var(--danger);
+  background: transparent;
+  color: var(--danger);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.templates {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.template-btn {
+  text-align: left;
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.template-btn small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.book-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.book {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
+}
+
+.book-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.book h3 {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.badge {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.badge.available {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.badge.borrowed {
+  background: #f6e4d8;
+  color: var(--warn);
+}
+
+.meta {
+  margin: 0.25rem 0 0.55rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.meta.loan {
+  margin-top: -0.35rem;
+  color: var(--ink);
+}
+
+.inline-field {
+  flex-direction: row;
+  align-items: center;
+  flex: 1 1 180px;
+  gap: 0.35rem;
+}
+
+.note {
+  margin-top: 0.35rem;
+  min-height: 1.2rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.report {
+  margin-top: 1rem;
+  white-space: pre-wrap;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  background: #f7f2e8;
+  border-radius: 8px;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  min-height: 4rem;
+}
+
+.toast {
+  margin-top: 0.75rem;
+  color: var(--danger);
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+}
+
+.hint {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}

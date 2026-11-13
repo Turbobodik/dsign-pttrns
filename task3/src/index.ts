@@ -21,6 +21,7 @@ function main(): void {
   const checkedIn = facade.checkIn(created.id);
   console.log('Checked in:', checkedIn);
 
+  console.log('Available not all:', facade.listAvailableRooms().map((r) => r.getNumber()));
   const checkedOut = facade.checkOut(created.id);
   console.log('Checked out:', checkedOut);
   console.log('Available again:', facade.listAvailableRooms().map((r) => r.getNumber()));
@@ -36,7 +37,7 @@ function main(): void {
   const cancelled = facade.cancelBooking(other.id);
   console.log('Cancelled after confirm:', cancelled);
   console.log('Refunds:', payments.getRecords().filter((p) => p.type === 'refund'));
-  console.log('Notifications sent:', notifications.getSent().length);
+  console.log('Notifications:', notifications.getSent());
 }
 
 main();
